@@ -19,7 +19,7 @@ EctoRange.ago 2, :days
 
 The package can be installed as:
 
-  1. Add `time_spans` to your list of dependencies in `mix.exs`:
+  1. Add `ago_times` to your list of dependencies in `mix.exs`:
 
     ```elixir
     def deps do
