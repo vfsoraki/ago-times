@@ -1,4 +1,27 @@
 defmodule DateRange do
+  @moduledoc """
+  A helper library to easily create relative times, like 2 days ago.
+
+  The result of functions is always a `%DateTime{}`.
+  """
+  
+  @opaque time_unit :: :seconds | :minutes | :hours | :days | :weeks
+  
+  @spec ago(num :: integer, unit :: time_unit) :: %DateTime{}
+  @doc """
+  Create a past time, yielding a `%DateTime{}`.
+  
+  Example:
+  
+  ```
+  # Create a DateTime, indicating 2 days ago
+  DateRange.ago 2, :days
+  ```
+
+  Available units are `:seconds`, `:minutes`, `:hours`, `:days` and `:weeks`.
+  """
+  def ago(num, unit)
+  
   def ago(days, :days) when is_integer(days) do
     ago 86400 * days, :seconds
   end

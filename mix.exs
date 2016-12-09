@@ -9,7 +9,11 @@ defmodule TimeSpans.Mixfile do
      start_permanent: Mix.env == :prod,
      description: description(),
      package: package(),
-     deps: deps()]
+     deps: deps(),
+     dialyzer: [
+       plt_add_apps: [:ecto],
+     ],
+    ]
   end
 
   def application do
@@ -18,7 +22,9 @@ defmodule TimeSpans.Mixfile do
 
   defp deps do
     [
-      {:ecto, ">= 0.0.0", optional: true}
+      {:ecto, ">= 0.0.0", optional: true},
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:dialyxir, "~> 0.4", only: [:dev], runtime: false}
     ]
   end
   defp description do
@@ -31,7 +37,7 @@ defmodule TimeSpans.Mixfile do
     [
      maintainers: ["Vahid Fazlollahzade"],
      licenses: ["Apache 2.0"],
-     links: %{"GitHub" => "https://github.com/ericmj/postgrex"}
+     links: %{"GitHub" => "https://github.com/vfsoraki/ago-times"}
     ]
   end
 end
