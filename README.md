@@ -21,11 +21,11 @@ The package can be installed as:
 
   1. Add `ago_times` to your list of dependencies in `mix.exs`:
 
-    ```elixir
+
     def deps do
       [{:ago_times, "~> 0.1.0"}]
     end
-    ```
+
 
   2. Have fun!
 
